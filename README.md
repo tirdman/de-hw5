@@ -38,12 +38,12 @@ batch.expect_column_values_to_not_be_null(column='device_ip_addr')
 - Проверка на тип данных  
 batch.expect_column_values_to_be_of_type(column='device_ip_addr', type_='TEXT')
 
-- #Все значения столбца должны соответствовать регулярному выражению  
+- Все значения столбца должны соответствовать регулярному выражению  
 batch.expect_column_values_to_match_regex(column='device_ip_addr', regex='^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$')
 
 ## bytes_received ## 
 
-#Проверка на тип данных  
+- Проверка на тип данных  
 batch.expect_column_values_to_be_of_type(column='bytes_received', type_='BIGINT')
 
 ## bytes_sent ## 
