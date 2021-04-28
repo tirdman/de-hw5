@@ -48,7 +48,7 @@ batch.expect_column_values_to_be_of_type(column='bytes_received', type_='BIGINT'
 
 ## bytes_sent ## 
 
-#Проверка на тип данных  
+- Проверка на тип данных  
 batch.expect_column_values_to_be_of_type(column='bytes_sent', type_='BIGINT')
 
 # dtirskikh.ods_payment #
