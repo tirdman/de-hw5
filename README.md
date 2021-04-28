@@ -10,7 +10,7 @@ batch.expect_column_values_to_not_be_null(column='user_id')
 #Проверка на тип данных
 batch.expect_column_values_to_be_of_type(column='user_id', type_='BIGINT')
 
--billing_period
+---billing_period
 
 #Не должно быть данных с NULL c логической и бизнес точки зрения
 batch.expect_column_values_to_not_be_null(column='billing_period')
@@ -64,3 +64,65 @@ batch.expect_column_values_to_be_of_type(column='created_at', type_='DATE')
 
 #Проверка на то, что данные попадают в заданный диапазон
 batch.expect_column_values_to_be_between(column='created_at', max_value='2022-01-01', min_value='2012-01-01')
+
+
+### dtirskikh.ods_issue ###
+
+---user_id
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='user_id')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='user_id', type_='BIGINT')
+
+---start_time
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='start_time')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='start_time', type_='TIMESTAMP')
+
+#Проверка на то, что данные попадают в заданный диапаз
+batch.expect_column_values_to_be_between(column='start_time', max_value='2022-01-01', min_value='2012-01-01')
+
+---end_time
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='end_time')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='end_time', type_='TIMESTAMP')
+
+#Проверка на то, что данные попадают в заданный диапаз
+batch.expect_column_values_to_be_between(column='end_time', max_value='2022-01-01', min_value='2012-01-01')
+
+---title
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='title')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='title', type_='TEXT')
+
+
+---description
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='description')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='description', type_='TEXT')
+
+---description
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='service')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='service', type_='TEXT')
+
+#Соответствие значения допустимому списку
+batch.expect_column_distinct_values_to_be_in_set(column='service', value_set=['Connect', 'Disconnect', 'Setup Environment'])
+
