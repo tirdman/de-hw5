@@ -2,6 +2,57 @@
 
 ### dtirskikh.ods_payment ###
 
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='user_id')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='user_id', type_='BIGINT')
+
+---timestamp_
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='timestamp_')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='timestamp_', type_='TIMESTAMP')
+
+#Проверка на то, что данные попадают в заданный диапазон
+batch.expect_column_values_to_be_between(column='timestamp_', max_value='2021-01-01', min_value='2012-01-01')
+
+---device_id
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='device_id')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='device_id', type_='TEXT')
+
+#Все значения столбца должны соответствовать регулярному выражению
+batch.expect_column_values_to_match_regex(column='device_id', regex='^d\d{3}$')
+
+---device_ip_addr
+
+#Не должно быть данных с NULL c логической и бизнес точки зрения
+batch.expect_column_values_to_not_be_null(column='device_ip_addr')
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='device_ip_addr', type_='TEXT')
+
+#Все значения столбца должны соответствовать регулярному выражению
+batch.expect_column_values_to_match_regex(column='device_ip_addr', regex='^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$')
+
+---bytes_received
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='bytes_received', type_='BIGINT')
+
+---bytes_sent
+
+#Проверка на тип данных
+batch.expect_column_values_to_be_of_type(column='bytes_sent', type_='BIGINT')
+
+### dtirskikh.ods_payment ###
+
 ---user_id
 
 #Не должно быть данных с NULL c логической и бизнес точки зрения
