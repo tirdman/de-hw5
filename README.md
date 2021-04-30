@@ -1,6 +1,6 @@
-# DE. Home work #3. Data quality with great expectations framework #
+# DE. Home work #5. Data quality with great expectations framework #
 
-# dtirskikh.ods_payment #
+# dtirskikh.ods_traffic #
 
 - Не должно быть данных с NULL c логической и бизнес точки зрения  
 batch.expect_column_values_to_not_be_null(column='user_id')
