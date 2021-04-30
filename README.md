@@ -75,15 +75,6 @@ batch.expect_column_distinct_values_to_be_in_set(column='pay_doc_type', value_se
 - В датасете должны присутствовать все значения из списка  
 batch.expect_column_distinct_values_to_equal_set(column='pay_doc_type', value_set=['MASTER', 'MIR', 'VISA'])
 
-- Не должно быть данных с NULL c логической и бизнес точки зрения  
-batch.expect_column_values_to_not_be_null(column='sum')
-
-- Проверка на тип данных  
-batch.expect_column_values_to_be_of_type(column='sum', type_='NUMERIC')
-
-- Проверка на то, что данные попадают в заданный диапазон  
-batch.expect_column_values_to_be_between(column='sum', max_value=500000, min_value=0)
-
 ## pay_doc_num ## 
 
 - Не должно быть данных с NULL c логической и бизнес точки зрения  
